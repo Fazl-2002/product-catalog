@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ProductsLayout from './pages/ProductsLayout';
@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app-wrapper">
         <Navbar />
         <main className="main-content">
@@ -25,7 +25,6 @@ function App() {
           </Routes>
         </main>
         
-        {/* Footer with proper container */}
         <footer className="footer">
           <div className="footer-container">
             <p>Designed & Developed by <span className="footer-name">Farahnaz Fazl</span> © 2026</p>
@@ -33,7 +32,7 @@ function App() {
           </div>
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
