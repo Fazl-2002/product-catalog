@@ -1,0 +1,101 @@
+.navbar {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  margin: 20px auto;
+  max-width: 1300px;
+  border-radius: 50px;
+  background: var(--glass-dark);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border-light);
+  box-shadow: var(--glass-shadow), 0 0 30px rgba(42, 74, 58, 0.3);
+  animation: navbarGlow 4s infinite alternate;
+}
+
+@keyframes navbarGlow {
+  0% {
+    box-shadow: var(--glass-shadow), 0 0 20px rgba(42, 74, 58, 0.2);
+    border-color: var(--glass-border-light);
+  }
+  100% {
+    box-shadow: var(--glass-shadow), 0 0 40px rgba(198, 164, 63, 0.3);
+    border-color: rgba(198, 164, 63, 0.3);
+  }
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-family: 'Comic Neue', 'Raleway', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff, var(--primary-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(198, 164, 63, 0.5);
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px var(--primary-gold));
+  animation: logoBounce 3s infinite ease-in-out;
+}
+
+@keyframes logoBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--glass-white-medium), transparent);
+  transition: left 0.6s;
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px var(--primary-gold);
+}
+
+.nav-link.active {
+  background: var(--glass-white-high);
+  border: 1px solid var(--primary-gold);
+  box-shadow: 0 0 20px rgba(198, 164, 63, 0.5);
+  color: var(--primary-gold);
+}

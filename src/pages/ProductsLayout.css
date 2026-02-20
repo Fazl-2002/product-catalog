@@ -1,0 +1,66 @@
+.products-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 50px;
+  background: var(--glass-dark);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border-light);
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  animation: headerPulse 5s infinite alternate;
+}
+
+@keyframes headerPulse {
+  0% { box-shadow: 0 0 30px rgba(42, 74, 58, 0.3); }
+  100% { box-shadow: 0 0 60px rgba(198, 164, 63, 0.4); }
+}
+
+.products-header h1 {
+  font-size: 3.5rem;
+  font-family: 'Comic Neue', cursive;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff, var(--primary-gold), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+
+.products-header p {
+  font-size: 1.2rem;
+  color: var(--primary-soft-white);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-placeholder {
+  display: inline-block;
+  padding: 10px 30px;
+  background: var(--glass-white-medium);
+  border: 1px solid var(--glass-border-light);
+  border-radius: 30px;
+  color: var(--primary-gold);
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+  animation: filterPulse 3s infinite;
+}
+
+@keyframes filterPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.products-content {
+  min-height: 500px;
+}

@@ -1,0 +1,249 @@
+/* ===== فونت‌های مدرن و بادکنکی ===== */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;600&family=Raleway:wght@400;700&display=swap');
+
+/* ===== متغیرهای رنگی لوکس ===== */
+:root {
+  --primary-dark: #0a0f1c;
+  --primary-deep: #1a1f2e;
+  --primary-forest: #223322;
+  --primary-emerald: #2a4a3a;
+  --primary-teal: #1e4a5f;
+  --primary-navy: #1a2a4a;
+  --primary-gold: #c6a43f;
+  --primary-amber: #b8860b;
+  --primary-soft-white: #f0f4fa;
+  --glass-white: rgba(255, 255, 255, 0.08);
+  --glass-white-medium: rgba(255, 255, 255, 0.15);
+  --glass-white-high: rgba(255, 255, 255, 0.25);
+  --glass-dark: rgba(10, 15, 28, 0.4);
+  --glass-dark-medium: rgba(10, 15, 28, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-border-light: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  --glass-shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== استایل پایه ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Quicksand', sans-serif;
+  background: radial-gradient(ellipse at top left, var(--primary-dark), var(--primary-deep), var(--primary-navy));
+  color: var(--primary-soft-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== اشکال متحرک شناور در پس‌زمینه ===== */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.15;
+  animation: floatShape 20s infinite ease-in-out;
+  border-radius: 50%;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-emerald), transparent);
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--primary-teal), transparent);
+  bottom: 10%;
+  right: 5%;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--primary-gold), transparent);
+  top: 30%;
+  right: 20%;
+  animation-delay: -10s;
+}
+
+.shape-4 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--primary-navy), transparent);
+  bottom: 20%;
+  left: 15%;
+  animation-delay: -15s;
+}
+
+.shape-5 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--primary-forest), transparent);
+  top: 60%;
+  left: 30%;
+  animation-delay: -7s;
+}
+
+@keyframes floatShape {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(20px, 50px) scale(0.9);
+  }
+  75% {
+    transform: translate(-40px, 20px) scale(1.05);
+  }
+}
+
+/* ===== کانتینر اصلی ===== */
+.app-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== اسکرول بار زیبا ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-emerald), var(--primary-teal));
+  border-radius: 10px;
+  border: 2px solid var(--primary-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-teal), var(--primary-emerald));
+}
+
+/* ===== استایل لینک‌ها ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+/* ===== App Wrapper ===== */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* ===== Footer ===== */
+.footer {
+  width: 100%;
+  padding: 30px 20px;
+  margin-top: 50px;
+  background: var(--glass-dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--glass-border-light);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--glass-white), transparent 70%);
+  animation: rotate 25s linear infinite;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.footer-name {
+  color: var(--primary-gold);
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-shadow: 0 0 15px var(--primary-gold);
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.footer-name::after {
+  content: '✨';
+  font-size: 1rem;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  animation: sparkle 2s infinite;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* ===== Animations ===== */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}

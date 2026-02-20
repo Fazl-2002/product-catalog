@@ -1,0 +1,138 @@
+.product-list {
+  padding: 40px 0;
+}
+
+.product-list h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-family: 'Comic Neue', cursive;
+  background: linear-gradient(135deg, #fff, var(--primary-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 35px;
+  padding: 20px;
+}
+
+.product-card {
+  background: var(--glass-dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border-light);
+  border-radius: 30px;
+  padding: 30px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: cardFloat 6s infinite ease-in-out;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--glass-white), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: rotate 20s linear infinite;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 50px rgba(198, 164, 63, 0.4);
+}
+
+.product-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-family: 'Comic Neue', cursive;
+  color: var(--primary-gold);
+  position: relative;
+  z-index: 1;
+}
+
+.product-category {
+  display: inline-block;
+  padding: 5px 15px;
+  background: var(--glass-white-medium);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  border: 1px solid var(--glass-border-light);
+  position: relative;
+  z-index: 1;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px var(--primary-gold);
+  position: relative;
+  z-index: 1;
+}
+
+.product-description {
+  color: var(--primary-soft-white);
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.details-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, var(--primary-emerald), var(--primary-teal));
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.4s;
+  border: 1px solid var(--glass-border-light);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.details-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--glass-white-high), transparent);
+  transition: left 0.6s;
+}
+
+.details-link:hover::before {
+  left: 100%;
+}
+
+.details-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(198, 164, 63, 0.5);
+}
