@@ -25,7 +25,7 @@
 - [💻 Technologies Used](#-technologies-used)
 - [⚙️ Installation](#️-installation)
 - [🎯 Usage](#-usage)
-- [📸 Screenshots](#-screenshots)
+
 - [👩‍💻 Developer](#-developer)
 
 ---
